@@ -1,0 +1,123 @@
+<ion-content class="bg-img">
+    <div class="main-content">
+      <div padding text-center class="container-logo">
+        <img src="assets/imgs/logo.png">
+      </div>
+  
+      <div padding style="width: 100%;">
+        <form [formGroup]="authForm">
+          <div class="errormsg">
+            <div *ngIf=" nome.touched">
+              <p>nome é obrigatorio.</p>
+            </div>
+            <div class="error-box" *ngIf="email.touched">
+              <p>Email é obrigatorio .</p>
+            </div>
+            <div *ngIf="senha.touched">
+              <p>Senha é obrigatorio.</p>
+            </div>
+            <div *ngIf="cnfpass.touched">
+              <p>Confirmar senha é obrigatorio.</p>
+            </div>
+            <div *ngIf="cpf.touched">
+              <p>cpf é obrigatorio.</p>
+            </div>
+            <div *ngIf="rg.touched">
+              <p>rg é obrigatorio.</p>
+            </div>
+            <div *ngIf="habilitacao.touched">
+              <p>rg é obrigatorio.</p>
+            </div>
+            <div *ngIf="validade_hab.touched">
+              <p>rg é obrigatorio.</p>
+            </div>
+            <div *ngIf="data_nascimento.touched">
+              <p>rg é obrigatorio.</p>
+            </div>
+  
+  
+          </div>
+          <ion-list>
+  
+            <ion-item padding-right>
+              <ion-label>
+                <ion-icon ios="ios-person" md="md-person"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.nome" [formControl]="nome" id="nome" type="text" required placeholder="Nome Completo *"></ion-input>
+            </ion-item>
+  
+            <ion-item padding-right>
+              <ion-label>
+                <ion-icon name="card"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.cpf" [formControl]="cpf" id="cpf" type="text" required placeholder="Cpf *"></ion-input>
+            </ion-item>
+  
+            <ion-item padding-right>
+              <ion-label>
+                <ion-icon name="card"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.rg" [formControl]="rg" id="rg" type="text" required placeholder="Rg *"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>
+                <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.email" [formControl]="email" id="email" type="email" required placeholder="Email *"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>
+                <ion-icon ios="ios-unlock" md="md-unlock"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.senha" [formControl]="senha" id="senha" type="{{passwordtype}}" required placeholder="Senha *"></ion-input>
+              <button ion-button clear class="eye-icon-btn" type="button" item-right (click)="managePassword()">
+                <ion-icon name="{{passeye}}"></ion-icon>
+              </button>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>
+                <ion-icon ios="ios-unlock" md="md-unlock"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="confirmarSenha" [formControl]="cnfpass" id="cnfpass" type="{{cnfpasswordtype}}" required placeholder="Confirmar Senha *"></ion-input>
+              <button ion-button clear class="eye-icon-btn" type="button" item-right (click)="managecnfPassword()">
+                <ion-icon name="{{cnfpasseye}}"></ion-icon>
+              </button>
+            </ion-item>
+  
+            <ion-item padding-right>
+              <ion-label>
+                <ion-icon name="card"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.habilitacao" [formControl]="habilitacao" id="habilitacao" type="text" required placeholder="Habilitação *"></ion-input>
+            </ion-item>
+  
+            <ion-item padding-right>
+              <ion-label>
+                <ion-icon name="card"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.validade_hab" [formControl]="validade_hab" 
+              id="validade_hab" type="date" required placeholder="Validade Habilição*"></ion-input>
+            </ion-item>
+  
+            <ion-item padding-right>
+              <ion-label>
+                <ion-icon ios="ios-person" md="md-calendar"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="cliente.data_nascimento" [formControl]="data_nascimento" 
+              id="data_nascimento" type="date" required
+                placeholder="Data de Nascimento *"></ion-input>
+            </ion-item>
+  
+          </ion-list>
+  
+          <button ion-button full color="dark" [disabled]="!authForm.valid" (click)="cadastrar()">Cadastrar</button>
+        </form>
+      
+       
+        
+      </div>
+    </div>
+  </ion-content>
