@@ -20,6 +20,11 @@ import { LocacaoPageModule } from '../pages/locacao/locacao.module';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera';
+import { BalanceamentoPageModule } from '../pages/balanceamento/balanceamento.module';
+import { Calendar } from '@ionic-native/calendar';
+import { CalendarModule } from "ion2-calendar";
+
 
 @NgModule({
   declarations: [
@@ -36,7 +41,13 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPageModule,
     ServicosPageModule,
     LocacaoPageModule,
-    CadastroPageModule
+    CadastroPageModule,
+    BalanceamentoPageModule,
+    CalendarModule,
+   
+    
+   
+   
     
   ],
   bootstrap: [IonicApp],
@@ -48,8 +59,11 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
+    Calendar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ClienteProvider,
+    Camera,
+   
     
   ]
 })

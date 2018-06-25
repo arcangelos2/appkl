@@ -3,13 +3,9 @@ import { IonicPage, NavController, NavParams, Platform, ToastController } from '
 import { Cliente } from '../../model/model-cliente';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ClienteProvider } from '../../providers/cliente/cliente';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
-/**
- * Generated class for the PerfilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -18,6 +14,8 @@ import { ClienteProvider } from '../../providers/cliente/cliente';
 })
 export class PerfilPage {
 
+  img = '';
+  
   confirmarSenha: any;
 
   cliente = new Cliente();
@@ -36,9 +34,11 @@ export class PerfilPage {
   cnfpasswordtype: string = 'password';
   cnfpasseye: string = 'eye';
   passeye: string = 'eye';
+  filePath: any;
+  actionSheetCtrl: any;
 
 
-  constructor(public platform: Platform, public toastCtrl: ToastController,
+  constructor(public platform: Platform, public toastCtrl: ToastController,public camera: Camera,
     public fb: FormBuilder, public navCtrl: NavController, public navParams: NavParams,
     public providerCliente: ClienteProvider) {
 
@@ -136,5 +136,74 @@ export class PerfilPage {
       this.cnfpasseye = 'eye';
     }
   }
+  //funcao tirar foto a imagem ainda nao vai pro servidor 
+tirarFoto() {
+  const options: CameraOptions = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE,
+
+    allowEdit: true,
+    targetWidth: 100,
+    targetHeight: 100
+  }
+
+  this.camera.getPicture(options).then((imageData) => {
+    // imageData is either a base64 encoded string or a file URI
+    // If it's base64:
+    this.img = 'data:image/jpeg;base64,' + imageData;
+  }, (err) => {
+    // Handle error
+  });
+}
+  // foto para o perfil
+  /*public presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Selecione a imagem',
+      buttons: [
+        {
+          text: 'Galeria',
+          handler: () => {
+            this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+          }
+        },
+        {
+          text: 'Camera',
+          handler: () => {
+            this.takePicture(this.camera.PictureSourceType.CAMERA);
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  public takePicture(sourceType) {
+    // Create options for the Camera Dialog
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+  
+      allowEdit: true,
+      targetWidth: 100,
+      targetHeight: 100
+    };
+      // Get the data of an image
+      this.camera.getPicture(options).then((imageData) => {
+        // imageData is either a base64 encoded string or a file URI
+        // If it's base64:
+        this.img = 'data:image/jpeg;base64,' + imageData;
+      }, (err) => {
+        // Handle error
+      });
+}*/
+
 
 }

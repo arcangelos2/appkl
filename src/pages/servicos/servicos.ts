@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BalanceamentoPage } from '../balanceamento/balanceamento';
 
-/**
- * Generated class for the ServicosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,7 +14,11 @@ export class ServicosPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ServicosPage');
+    //console.log('ionViewDidLoad ServicosPage');
+  }
+
+  balenceamento(){
+    this.navCtrl.push(BalanceamentoPage);
   }
 
 }

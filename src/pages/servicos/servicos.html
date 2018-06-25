@@ -1,18 +1,46 @@
-<!--
-  Generated template for the ServicosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>servicos</ion-title>
+    <ion-title>Serviços</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  
+  <ion-list>
+    <button ion-item (click)="balenceamento()">
+      <ion-avatar item-start (click)="balenceamento()">
+        <img src="assets/imgs/balenceamento.jpg">
+      </ion-avatar>
+      Balanceamento
+    </button>
+    <button ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/oleo.jpg">
+      </ion-avatar>
+      Troca de Óleo
+    </button>
+    <button ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/correia.jpg">
+      </ion-avatar>
+      Troca de Correia
+    </button>
+    <button ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/revisao.jpg">
+      </ion-avatar>
+      Revisão
+    </button>
+    <button ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/outros.jpg">
+      </ion-avatar>
+      Outros
+    </button>
+
+  </ion-list>
 
 </ion-content>
