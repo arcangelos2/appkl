@@ -30,12 +30,16 @@ export class ClienteProvider {
   showCliente(data: Cliente) {
     return this.http.get<Cliente>(this.url + 'perfil?id=' +data.id);
   }
-  //metodo para editar
+  //metodo para logar
   
   loginCliente(data: Cliente) {
     return this.http.post<Cliente>(this.url + 'login', data);
   }
-
+  
+  //metodo para editar
+  editCliente(data: Cliente) {
+    return this.http.put<Cliente>(this.url + data.id, data);
+  }
   
 
 }

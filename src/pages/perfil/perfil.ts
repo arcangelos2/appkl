@@ -86,22 +86,23 @@ export class PerfilPage {
 
   }
 
-  cadastrar() {
+  editar() {
     if (this.cliente.senha == this.confirmarSenha) {
-      this.providerCliente.cadastroCliente(this.cliente).subscribe((data: any) => {
+      this.providerCliente.editCliente(this.cliente).subscribe((data: any) => {
+       this.cliente = data;
 
         console.log(data);
 
         if (data.status == true) {
-          this.presentToast('Cliente cadastrado com sucesso!');
+          this.presentToast('Cliente atualizado com sucesso!');
         } else {
-          this.presentToast('Cliente não foi cadastrado!');
+          this.presentToast('Cliente não foi atualizado!');
         }
 
       })
       error => {
         console.log(error);
-        this.presentToast('Aconteceu algum erro ao salvar!');
+        this.presentToast('Aconteceu algum erro ao atualizar!');
       };
     } else {
       this.presentToast('Senha não confere com a confirmação!')
@@ -157,53 +158,7 @@ tirarFoto() {
     // Handle error
   });
 }
-  // foto para o perfil
-  /*public presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Selecione a imagem',
-      buttons: [
-        {
-          text: 'Galeria',
-          handler: () => {
-            this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
-          }
-        },
-        {
-          text: 'Camera',
-          handler: () => {
-            this.takePicture(this.camera.PictureSourceType.CAMERA);
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        }
-      ]
-    });
-    actionSheet.present();
-  }
 
-  public takePicture(sourceType) {
-    // Create options for the Camera Dialog
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-  
-      allowEdit: true,
-      targetWidth: 100,
-      targetHeight: 100
-    };
-      // Get the data of an image
-      this.camera.getPicture(options).then((imageData) => {
-        // imageData is either a base64 encoded string or a file URI
-        // If it's base64:
-        this.img = 'data:image/jpeg;base64,' + imageData;
-      }, (err) => {
-        // Handle error
-      });
-}*/
 
 
 }

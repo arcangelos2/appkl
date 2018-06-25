@@ -1,17 +1,15 @@
-<ion-header>
-
-  <ion-navbar color="dark">
-    <ion-title>
-      &nbsp;Perfil</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<ion-header class="header-main">
+    <ion-navbar >
+      <ion-title >
+     Perfil
+      </ion-title>
+    
+    </ion-navbar>
+  </ion-header>
 
 <ion-content class="bg-img">
   <div class="main-content">
-    <div padding text-center class="container-logo">
-      <img src="assets/imgs/logo.png">
-    </div>
+    
 
     <div padding style="width: 100%;">
       <form [formGroup]="authForm">
@@ -125,7 +123,7 @@
 
         </ion-list>
 
-        <button ion-button full color="dark" [disabled]="!authForm.valid" (click)="cadastrar()">Cadastrar</button>
+        <button ion-button full color="dark" [disabled]="!authForm.valid" (click)="editar()">Atualizar</button>
       </form>
 
 
