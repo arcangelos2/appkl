@@ -4,6 +4,7 @@ import { Cliente } from '../../model/model-cliente';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ClienteProvider } from '../../providers/cliente/cliente';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { LoginPage } from '../login/login';
 
 
 
@@ -66,6 +67,9 @@ export class PerfilPage {
     this.cnfpass = this.authForm.controls['cnfpass'];
 
 
+  }
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 
   ionViewDidLoad() {

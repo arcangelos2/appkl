@@ -21,9 +21,18 @@ import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { FilePath } from '@ionic-native/file-path';
+import { FileTransfer } from '@ionic-native/file-transfer';
+
 import { BalanceamentoPageModule } from '../pages/balanceamento/balanceamento.module';
 import { Calendar } from '@ionic-native/calendar';
-import { CalendarModule } from "ion2-calendar";
+import { CalendarModule } from 'ion2-calendar';
+import { NovoBalanceamentoPageModule } from '../pages/novo-balanceamento/novo-balanceamento.module';
+import { UploadPageModule } from '../pages/upload/upload.module';
+
+
+
 
 
 @NgModule({
@@ -43,10 +52,9 @@ import { CalendarModule } from "ion2-calendar";
     LocacaoPageModule,
     CadastroPageModule,
     BalanceamentoPageModule,
+    NovoBalanceamentoPageModule,
     CalendarModule,
-   
-    
-   
+    UploadPageModule
    
     
   ],
@@ -59,10 +67,14 @@ import { CalendarModule } from "ion2-calendar";
   providers: [
     StatusBar,
     SplashScreen,
-    Calendar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ClienteProvider,
     Camera,
+    Calendar,
+  
+    File,
+    FilePath,
+    FileTransfer
    
     
   ]

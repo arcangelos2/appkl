@@ -1,15 +1,20 @@
 <ion-header class="header-main">
-    <ion-navbar >
-      <ion-title >
-     Perfil
-      </ion-title>
-    
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <ion-title>
+      Perfil
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="header-btn" (click)="logout()">
+        <ion-icon name="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
 
 <ion-content class="bg-img">
   <div class="main-content">
-    
+
 
     <div padding style="width: 100%;">
       <form [formGroup]="authForm">

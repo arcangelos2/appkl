@@ -38,8 +38,9 @@ export class ClienteProvider {
   
   //metodo para editar
   editCliente(data: Cliente) {
-    return this.http.put<Cliente>(this.url + data.id, data);
+    return this.http.post<Cliente>(this.url + 'editar', data);
   }
+  
   
 
 }

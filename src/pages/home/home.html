@@ -12,13 +12,19 @@
 </ion-header> -->
 
 <ion-header class="header-main">
-  <ion-navbar >
-    <ion-title >
-    <p class="color-txt">{{userData.email}}</p>
+  <ion-navbar>
+    <ion-title>
+      <p class="color-txt">{{userData.email}}</p>
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="header-btn" (click)="logout()">
         <ion-icon name="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -27,11 +33,53 @@
 <ion-content padding>
 
   <h2>Bem vindo: {{userData.email}}</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <img src="assets/imgs/banner.jpg" />
+          <ion-card-content>
+            <ion-card-title>
+              Gol
+            </ion-card-title>
+            <p>
+              Preço mais barato.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <img src="assets/imgs/banner.jpg" />
+          <ion-card-content>
+            <ion-card-title>
+              Gol
+            </ion-card-title>
+            <p>
+              Preço mais barato.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <img src="assets/imgs/banner.jpg" />
+          <ion-card-content>
+            <ion-card-title>
+              Gol
+            </ion-card-title>
+            <p>
+              Preço mais barato.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  
 
   <ion-card-content>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
   </ion-card-content>
 
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the LocacaoPage page.
@@ -19,7 +20,9 @@ export class LocacaoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LocacaoPage');
+    //console.log('ionViewDidLoad LocacaoPage');
   }
-
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 }

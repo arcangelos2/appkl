@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BalanceamentoPage } from '../balanceamento/balanceamento';
+import { LoginPage } from '../login/login';
+
 
 
 @IonicPage()
@@ -20,5 +22,8 @@ export class ServicosPage {
   balenceamento(){
     this.navCtrl.push(BalanceamentoPage);
   }
-
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
+  
 }
