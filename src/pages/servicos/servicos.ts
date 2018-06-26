@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BalanceamentoPage } from '../balanceamento/balanceamento';
 import { LoginPage } from '../login/login';
+import { CalendarioPage } from '../calendario/calendario';
 
 
 
@@ -24,6 +25,9 @@ export class ServicosPage {
   }
   logout(){
   	this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
+  calendario(){
+    this.navCtrl.push(CalendarioPage);
   }
   
 }

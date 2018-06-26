@@ -23,13 +23,18 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FilePath } from '@ionic-native/file-path';
-import { FileTransfer } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 
 import { BalanceamentoPageModule } from '../pages/balanceamento/balanceamento.module';
-import { Calendar } from '@ionic-native/calendar';
-import { CalendarModule } from 'ion2-calendar';
+
+
 import { NovoBalanceamentoPageModule } from '../pages/novo-balanceamento/novo-balanceamento.module';
 import { UploadPageModule } from '../pages/upload/upload.module';
+import { HttpModule } from '@angular/http';
+
+
+
+
 
 
 
@@ -53,8 +58,10 @@ import { UploadPageModule } from '../pages/upload/upload.module';
     CadastroPageModule,
     BalanceamentoPageModule,
     NovoBalanceamentoPageModule,
-    CalendarModule,
-    UploadPageModule
+    UploadPageModule,
+    HttpModule,
+    
+   
    
     
   ],
@@ -70,11 +77,12 @@ import { UploadPageModule } from '../pages/upload/upload.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ClienteProvider,
     Camera,
-    Calendar,
-  
     File,
     FilePath,
-    FileTransfer
+    FileTransfer,   
+    FilePath,
+    FileTransfer,
+  FileTransferObject,
    
     
   ]

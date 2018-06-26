@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { NovoBalanceamentoPage } from '../novo-balanceamento/novo-balanceamento';
 import { LoginPage } from '../login/login';
 
@@ -13,9 +13,12 @@ export class BalanceamentoPage {
 
 
 
-  constructor(public modalCtrl: ModalController,
+  constructor(public modalCtrl: ModalController, private viewCtrl : ViewController, 
     public navCtrl: NavController, public navParams: NavParams) {
   }
+  backButtonAction() {
+    this.viewCtrl.dismiss();
+}
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad BalanceamentoPage');

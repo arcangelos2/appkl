@@ -1,5 +1,8 @@
 <ion-header class="header-main">
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       Serviços
     </ion-title>
@@ -23,7 +26,7 @@
       Balanceamento
     </button>
     <button ion-item>
-      <ion-avatar item-start>
+      <ion-avatar item-start (click)="calendario()">
         <img src="assets/imgs/oleo.jpg">
       </ion-avatar>
       Troca de Óleo

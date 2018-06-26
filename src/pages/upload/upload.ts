@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ActionSheetController, ToastController } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { Camera } from '@ionic-native/camera';
-import { File } from '@ionic-native/file';
-import { FilePath } from '@ionic-native/file-path';
-import { Cordova } from '@ionic-native/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController,ActionSheetController, ToastController, LoadingController } from 'ionic-angular';
+
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Http } from '@angular/http';
+import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 
 
 
@@ -14,113 +13,128 @@ import { Cordova } from '@ionic-native/core';
   templateUrl: 'upload.html',
 })
 export class UploadPage {
-
-  lastImage: string = null;
-  cropImagePath:any;
-
-  constructor(public platform: Platform, public camera: Camera, public file: File, 
-    public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController,
-    public filePath: FilePath,
-    public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UploadPage');
-  }
   
-  logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
+  imageFileName: any = "";
+  nome: any;
 
-  public presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Select Image Source',
-      buttons: [
-        {
-          text: 'Load from Library',
-          handler: () => {
-            this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
-          }
-        },
-        {
-          text: 'Use Camera',
-          handler: () => {
-            this.takePicture(this.camera.PictureSourceType.CAMERA);
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        }
-      ]
-    });
-    actionSheet.present();
-  }
 
-  public takePicture(sourceType) {
-  // Create options for the Camera Dialog
-  var options = {
-    quality: 100,
-    sourceType: sourceType,
-    allowEdit: true,
-    saveToPhotoAlbum: true,
-    correctOrientation: true
-  };
+  constructor(public navCtrl: NavController,
+    private transfer: FileTransfer,
+    private camera: Camera,
+    public loadingCtrl: LoadingController,
+    public http: Http, public actionSheetCtrl: ActionSheetController,
+   
+    public toastCtrl: ToastController) { }
 
-  // Get the data of an image
-  this.camera.getPicture(options).then((imagePath) => {
-    alert('imagePath '+imagePath);
-    this.cropImagePath = imagePath;
-    // Special handling for Android library
-    if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
-      this.filePath.resolveNativePath(imagePath)
-        .then(filePath => {
-          let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
-          let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-          this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-        });
-    } else {
-      var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-      var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-      this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+  getImage() {
+     this.imageFileName = "";
+     
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true,
+      targetWidth: 100,
+      targetHeight: 100
+
+
     }
-  }, (err) => {
-    this.presentToast('Error while selecting image.');
-  });
-}
-
-private createFileName() {
-  var d = new Date(),
-  n = d.getTime(),
-  newFileName =  n + ".jpg";
-  return newFileName;
-}
-
-// Copy the image to a local folder
-private copyFileToLocalDir(namePath, currentName, newFileName) {
-  alert('pathName->>'+namePath+'->currentName-->'+currentName+'->newFileName-->'+newFileName);
-  this.file.copyFile(namePath, currentName, Cordova.file.dataDirectory, newFileName).then(success => {
-    this.lastImage = newFileName;
-  }, error => {
-    this.presentToast('Error while storing file.');
-  });
-}
 
 
-  private presentToast(text) {
-  let toast = this.toastCtrl.create({
-    message: text,
-    duration: 3000,
-    position: 'top'
-  });
-  toast.present();
+    this.camera.getPicture(options).then((imageData) => {
+      //this.imageUri = 'data:image/jpeg;base64,' + imageData;
+      //this.imageFileName = this.imageUri;
+      let base64image = 'data:image/jpeg;base64,' + imageData;
+        this.imageFileName = base64image;
+    }, (err) => {
+      console.log(err);
+      this.presentToast(err);
+    });
   }
 
-  public pathForImage(img) {
-  if (img === null) {
-    return '';
-  } else {
-    //return Cordova.file.dataDirectory + img;
-   }
-}
+  doLogin() {
+    this.enviarImage()
+      .then((result: any) => {
+        console.log(result);
+        this.imageFileName = "https://operahouse.net.br/kl/arquivos/" + result.nome;
+        this.toastCtrl.create({
+          message: result.message, position: 'botton',
+          duration: 3000
+        }).present();
+        this.imageFileName = '';
+      })
+      .catch((error: any) => {
+
+      });
+  }
+
+
+
+  enviarImage() {
+
+    return new Promise((resolve, reject) => {
+
+      this.nome = Math.random();
+      var data = {
+        file: this.imageFileName,
+        name: this.nome
+      };
+
+      this.http.post('https://operahouse.net.br/kl/api/arquivos/upload', data)
+        .subscribe((result: any) => {
+          resolve(result.json());
+        },
+          (error) => {
+            console.log(error);
+            reject(error.json());
+
+          });
+    });
+  }
+
+  //metodo em espera
+  uploadFile() {
+    let loader = this.loadingCtrl.create({
+      content: "Uploading..."
+    });
+    loader.present();
+    const fileTransfer: FileTransferObject = this.transfer.create();
+
+    let options: FileUploadOptions = {
+      fileKey: 'file',
+      fileName: 'file',
+      chunkedMode: false,
+      mimeType: "image/jpeg",
+
+      headers: {}
+    }
+
+    fileTransfer.upload(this.imageFileName, 'https://operahouse.net.br/kl/api/arquivos/upload', options)
+      .then((data) => {
+        console.log(data + " Uploaded Successfully");
+        //this.imageFileName = "http://192.168.0.7:8080/static/images/ionicfile.jpg"
+        loader.dismiss();
+        this.presentToast("Image uploaded successfully");
+      }, (err) => {
+        console.log(err);
+        loader.dismiss();
+        this.presentToast(err);
+      });
+  }
+
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 6000,
+      position: 'bottom'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
+  }
+ 
 }

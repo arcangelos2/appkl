@@ -1,30 +1,66 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, App, NavController, Tabs } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import { LoginPage } from '../pages/login/login';
+import { UploadPage } from '../pages/upload/upload';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+    
+  @ViewChild('content') nav: NavController;
   rootPage: any = LoginPage;
   
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  pages: Array<{title: string, index: any}>;
+  
+
+  constructor(private app: App,  
+    platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    
+     
+
+    // used for an example of ngFor and navigation
+    this.pages = [
+      { title: 'Home', index: 0 },
+      { title: 'Locacao', index: 1 },
+      { title: 'Servicos', index: 2 },
+      { title: 'Perfil', index: 3},
+      { title: 'Fotos', index: 4 }
+      
+    ];
+
+  
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+      
       statusBar.styleDefault();
       splashScreen.hide();
-    });
-  }
 
-  openPage(p) {
-    this.rootPage = p;
-   
+      platform.registerBackButtonAction(() => {
+        let nav = app.getActiveNavs()[0];
+        let activeView = nav.getActive();
+ 
+        if(activeView != null){
+          if(nav.canGoBack())
+            nav.pop();
+          else if (typeof activeView.instance.backButtonAction === 'function')
+            activeView.instance.backButtonAction();
+          else
+            nav.parent.select(0); // goes to the first tab
+        }
+      });
+    });
+
+  }
+  
+
+  openPage(p) {   
+    this.nav.setRoot(TabsPage,{pagina:p.index});   
   }
 
 }
