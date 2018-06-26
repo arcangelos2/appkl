@@ -6,15 +6,11 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
 import { LoginPageModule } from '../pages/login/login.module';
-
 import { ClienteProvider } from '../providers/cliente/cliente';
-
 import { ServicosPageModule } from '../pages/servicos/servicos.module';
 import { LocacaoPageModule } from '../pages/locacao/locacao.module';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
@@ -24,17 +20,16 @@ import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FilePath } from '@ionic-native/file-path';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
-
 import { BalanceamentoPageModule } from '../pages/balanceamento/balanceamento.module';
-
-
 import { NovoBalanceamentoPageModule } from '../pages/novo-balanceamento/novo-balanceamento.module';
 import { UploadPageModule } from '../pages/upload/upload.module';
 import { HttpModule } from '@angular/http';
+import { Calendar } from '@ionic-native/calendar';
+import { CalendarioPage } from '../pages/calendario/calendario';
+import { AgendaPageModule } from '../pages/agenda/agenda.module';
 
-
-
-
+import { CalendarModule } from "ion2-calendar";
+import { CalendarioCorreiaPageModule } from '../pages/calendario-correia/calendario-correia.module';
 
 
 
@@ -44,9 +39,11 @@ import { HttpModule } from '@angular/http';
   declarations: [
     MyApp,
     HomePage,
-    TabsPage
+    TabsPage,
+    CalendarioPage
   ],
   imports: [
+
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
@@ -60,31 +57,33 @@ import { HttpModule } from '@angular/http';
     NovoBalanceamentoPageModule,
     UploadPageModule,
     HttpModule,
-    
-   
-   
-    
+    AgendaPageModule,
+    CalendarModule,
+    CalendarioCorreiaPageModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,    
+    MyApp,
     HomePage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ClienteProvider,
     Camera,
     File,
     FilePath,
-    FileTransfer,   
+    FileTransfer,
     FilePath,
     FileTransfer,
-  FileTransferObject,
-   
-    
+    FileTransferObject,
+    Calendar
+
+
+
   ]
 })
-export class AppModule {}
+export class AppModule { }
