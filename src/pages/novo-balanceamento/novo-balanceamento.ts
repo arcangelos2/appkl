@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
+import { ServicosPage } from '../servicos/servicos';
 
 
 
@@ -10,11 +12,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NovoBalanceamentoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NovoBalanceamentoPage');
+  }
+
+  //metodo para nao sair do celular
+  backButtonAction() {
+    this.viewCtrl.dismiss();
+  }
+  logout() {
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
+  enviarBalanceamento(){
+    alert("Balanceamento agendado com suceeso");
+    this.navCtrl.setRoot(ServicosPage);
   }
 
 }

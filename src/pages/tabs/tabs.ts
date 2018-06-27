@@ -8,6 +8,7 @@ import { LocacaoPage } from '../locacao/locacao';
 import { ServicosPage } from '../servicos/servicos';
 import { BalanceamentoPage } from '../balanceamento/balanceamento';
 import { UploadPage } from '../upload/upload';
+import { NotificaoPage } from '../notificao/notificao';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -21,7 +22,9 @@ export class TabsPage {
   tab3Root = LocacaoPage;
   tab4Root = ServicosPage;
   tab5Root = UploadPage;
-  tab6Root = BalanceamentoPage;
+  tab6Root = NotificaoPage;
+  tab7Root = BalanceamentoPage;
+ 
  
   param : any;
   

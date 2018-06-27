@@ -1,0 +1,82 @@
+<ion-header class="header-main color-txt">
+    <ion-navbar color="primary">
+      <ion-title>
+        Troca de óleo
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only class="header-btn" (click)="logout()">
+          <ion-icon name="md-log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <ion-card>
+  
+      <ion-card-header>
+        Troca de óleo realizadas
+        
+      </ion-card-header>
+  
+      <ion-card-content>
+        <!-- Add card content here! -->
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-card>
+                  
+                  <ion-card-content>
+                    <ion-card-title>
+                        1000 km
+                    </ion-card-title>
+                    
+                    <p>
+                       Data: 05/02/2017
+                      </p>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col>
+                <ion-card>
+                 
+                  <ion-card-content>
+                    <ion-card-title>
+                      5000 km
+                    </ion-card-title>
+                    <p>
+                        Data: 09/08/2017
+                    </p>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col>
+                <ion-card>
+                 
+                  <ion-card-content>
+                    <ion-card-title>
+                     10000 km
+                    </ion-card-title>
+                    <p>
+                        Data: 03/03/2018
+                    </p>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        
+        
+        
+        
+      </ion-card-content>
+  
+    </ion-card>
+  
+    <button ion-button block (click)="trocaOleo()">Nova troca</button>
+  
+  
+  
+  </ion-content>

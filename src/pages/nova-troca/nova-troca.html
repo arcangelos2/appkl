@@ -1,0 +1,36 @@
+<ion-header class="header-main color-txt">
+    <ion-navbar color="primary">
+      <ion-title>
+        Agendar Troca de óleo
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only class="header-btn" (click)="logout()">
+          <ion-icon name="md-log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <ion-card>
+  
+      <ion-card-content>
+        <ion-card-title>
+          Selecione a data
+        </ion-card-title>
+        <p>
+          <ion-item padding-right>
+  
+            <ion-label>
+              <ion-icon name="card"></ion-icon>
+            </ion-label>
+            <ion-input type="date"></ion-input>
+          </ion-item>
+        </p>
+  
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block (click)="enviarOleo()">Enviar</button>
+  </ion-content>

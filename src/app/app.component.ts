@@ -31,7 +31,8 @@ export class MyApp {
       { title: 'Locacao', index: 1 },
       { title: 'Servicos', index: 2 },
       { title: 'Perfil', index: 3},
-      { title: 'Fotos', index: 4 }
+      { title: 'Fotos', index: 4 },
+      { title: 'Notificações', index: 5},
       
     ];
 

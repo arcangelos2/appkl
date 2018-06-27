@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { BalanceamentoPage } from '../balanceamento/balanceamento';
+import { NotificaoPage } from '../notificao/notificao';
 
 
 
@@ -12,17 +11,24 @@ import { BalanceamentoPage } from '../balanceamento/balanceamento';
 })
 export class HomePage {
 
-  userData:any;
+  userData: any;
   private rootPage;
 
-  constructor(public navCtrl: NavController,
-     public navParam: NavParams) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController,
+    public navParam: NavParams) {
 
-  		this.userData = this.navParam.data;
+    this.userData = this.navParam.data;
+  }
+  //metodo para nao sair do celular
+  backButtonAction() {
+    this.viewCtrl.dismiss();
+  }
+  note(){
+    this.navCtrl.push(NotificaoPage);
   }
 
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }  
-  
+  logout() {
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
+
 }

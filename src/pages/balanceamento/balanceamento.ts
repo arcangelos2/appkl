@@ -16,6 +16,7 @@ export class BalanceamentoPage {
   constructor(public modalCtrl: ModalController, private viewCtrl : ViewController, 
     public navCtrl: NavController, public navParams: NavParams) {
   }
+  //metodo para não sair do celular
   backButtonAction() {
     this.viewCtrl.dismiss();
 }

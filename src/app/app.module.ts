@@ -30,9 +30,13 @@ import { AgendaPageModule } from '../pages/agenda/agenda.module';
 
 import { CalendarModule } from "ion2-calendar";
 import { CalendarioCorreiaPageModule } from '../pages/calendario-correia/calendario-correia.module';
-
-
-
+import { NotificaoPageModule } from '../pages/notificao/notificao.module';
+import { TrocaOleoPageModule } from '../pages/troca-oleo/troca-oleo.module';
+import { NovaTrocaPageModule } from '../pages/nova-troca/nova-troca.module';
+import { TrocaCorreiaPageModule } from '../pages/troca-correia/troca-correia.module';
+import { NovaCorreiaPageModule } from '../pages/nova-correia/nova-correia.module';
+import { RevisaoPageModule } from '../pages/revisao/revisao.module';
+import { NovaRevisaoPageModule } from '../pages/nova-revisao/nova-revisao.module';
 
 
 @NgModule({
@@ -60,6 +64,13 @@ import { CalendarioCorreiaPageModule } from '../pages/calendario-correia/calenda
     AgendaPageModule,
     CalendarModule,
     CalendarioCorreiaPageModule,
+    NotificaoPageModule,
+    TrocaOleoPageModule,
+    NovaTrocaPageModule,
+    TrocaCorreiaPageModule,
+    NovaCorreiaPageModule,
+    RevisaoPageModule,
+    NovaRevisaoPageModule
 
   ],
   bootstrap: [IonicApp],

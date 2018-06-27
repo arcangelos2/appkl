@@ -5,6 +5,9 @@ import { LoginPage } from '../login/login';
 
 import { AgendaPage } from '../agenda/agenda';
 import { CalendarioCorreiaPage } from '../calendario-correia/calendario-correia';
+import { TrocaOleoPage } from '../troca-oleo/troca-oleo';
+import { TrocaCorreiaPage } from '../troca-correia/troca-correia';
+import { RevisaoPage } from '../revisao/revisao';
 
 
 
@@ -25,14 +28,18 @@ export class ServicosPage {
   balenceamento(){
     this.navCtrl.push(BalanceamentoPage);
   }
+  trocaOleo(){
+    this.navCtrl.push(TrocaOleoPage);
+  }
+  trocaCorreia(){
+    this.navCtrl.push(TrocaCorreiaPage);
+  }
+  revisao(){
+    this.navCtrl.push(RevisaoPage);
+  }
   logout(){
   	this.navCtrl.parent.parent.setRoot(LoginPage);
   }
-  calendario(){
-    this.navCtrl.push(AgendaPage);
-  }
-  correia(){
-    this.navCtrl.push(CalendarioCorreiaPage);
-  }
+  
   
 }
