@@ -37,6 +37,9 @@ export class ServicosPage {
   revisao(){
     this.navCtrl.push(RevisaoPage);
   }
+  outros(){
+    this.navCtrl.push(AgendaPage);
+  }
   logout(){
   	this.navCtrl.parent.parent.setRoot(LoginPage);
   }

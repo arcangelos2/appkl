@@ -13,7 +13,6 @@ $times-new-roman-bold-italic: 'Times New Roman Bold Italic';
 
 /* URLs */
 $url-times-new-roman-regular: url('../assets/fonts/times-regular.woff');
-$url-times-new-roman-bold: url('../assets/fonts/times-bold.woff');
 $url-times-new-roman-bold-italic: url('../assets/fonts/times-bold-italic.woff');
 
 
@@ -21,10 +20,7 @@ $url-times-new-roman-bold-italic: url('../assets/fonts/times-bold-italic.woff');
   font-family: $times-new-roman-regular;
   src: $url-times-new-roman-regular;
 }
-@font-face {
-  font-family: $times-new-roman-bold;
-  src: $url-times-new-roman-bold;
-}
+
 @font-face {
   font-family: $times-new-roman-bold-italic;
   src: $url-times-new-roman-bold-italic;

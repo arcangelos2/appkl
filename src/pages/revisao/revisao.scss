@@ -1,6 +1,6 @@
 page-revisao {
     .header-main {
-		background-color: $black !important;
+			background-color: #4682B4 !important;
 	}
 	.toolbar-title-md {
 		padding: 0 12px;
@@ -20,6 +20,9 @@ page-revisao {
 				margin: 12px 0;
 			}
 		}
+	}
+	.title{
+		margin-left: 10px;
 	}
 	.header-btn{
 		margin-left: -35px !important;

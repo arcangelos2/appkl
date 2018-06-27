@@ -1,6 +1,6 @@
 page-home {
 	.header-main {
-		background-color: $black !important;
+		background-color:#4682B4 !important;
 	}
 	.toolbar-ios {
 		ion-title {
@@ -22,4 +22,9 @@ page-home {
 	.color-txt{
 		color: #FFF !important;
 	}
+	/* Siide menu design */
+.app-root ion-menu .menu-inner,
+.app-root ion-menu .content {
+  background-color:#5F9EA0;
+}
 }

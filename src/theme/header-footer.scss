@@ -5,11 +5,13 @@
 .toolbar {
   .toolbar-background {
     background-color: transparent;
+    background-color: #4682B4;
   }
 }
 .header {
   &::after {
     display: none;
+    background-color: #4682B4;
   }
   .bar-button {
     // position: absolute;
@@ -46,7 +48,7 @@
   ion-menu {
     .menu-inner,
     .content {
-      background-color: $black;
+      background-color: $azul;
     }
   }
   side-menu-content {

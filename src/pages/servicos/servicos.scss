@@ -1,6 +1,6 @@
 page-servicos {
     .header-main {
-		background-color: $black !important;
+		background-color: #4682B4 !important;
 	}
 	.toolbar-title-md {
 		padding: 0 12px;
@@ -29,5 +29,10 @@ page-servicos {
 	.color-txt{
 		color: #FFF !important;
 	}
+	/* Siide menu design */
+ion-menu .menu-inner,
+ ion-menu .content {
+  background-color:#5F9EA0;
+}
 
 }

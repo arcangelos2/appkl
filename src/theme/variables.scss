@@ -97,7 +97,10 @@ $teal:       #30A69D;
 $grey:       #F7F9FC;
 $dark-gray:  #495B65;
 $black-3:     #3C3D3F;
+
+$azul : #4682B4;
 /* End */
+
 
 @import "./mixin";
 @import "./fonts";
@@ -106,3 +109,4 @@ $black-3:     #3C3D3F;
 @import "./header-footer";
 @import "./form";
 @import "./component";
+

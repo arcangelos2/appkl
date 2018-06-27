@@ -1,82 +1,77 @@
 <ion-header class="header-main color-txt">
-    <ion-navbar color="primary">
-      <ion-title>
-        Troca de correia
-      </ion-title>
-      <ion-buttons end>
-        <button ion-button icon-only class="header-btn" (click)="logout()">
-          <ion-icon name="md-log-out"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-navbar>
-  </ion-header>
-  
-  
-  <ion-content padding>
-  
-    <ion-card>
-  
-      <ion-card-header>
-        Troca de correias realizadas
-        
-      </ion-card-header>
-  
-      <ion-card-content>
-        <!-- Add card content here! -->
-        <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card>
+  <ion-navbar color="primary">
+    <ion-title>
+      Troca de correia
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="header-btn" (click)="logout()">
+        <ion-icon name="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button block (click)="trocaCrreia()">Nova troca</button>
+  <h4 class="title"> Histórico</h4>
+
+  <ion-card>
+
+    <ion-card-header>
+      Troca de correias realizadas
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Add card content here! -->
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+
+              <ion-card-content>
+                <ion-card-title>
+                  <h4>Correia Dentada</h4>
                   
-                  <ion-card-content>
-                    <ion-card-title>
-                        Correia Dentada
-                    </ion-card-title>
-                    
-                    <p>
-                       Data: 05/06/2017
-                      </p>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-              <ion-col>
-                <ion-card>
-                 
-                  <ion-card-content>
-                    <ion-card-title>
-                        Correia do alternador
-                    </ion-card-title>
-                    <p>
-                        Data: 09/04/2017
-                    </p>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-              <ion-col>
-                <ion-card>
-                 
-                  <ion-card-content>
-                    <ion-card-title>
-                        Correia do ar condicionado
-                    </ion-card-title>
-                    <p>
-                        Data: 03/02/2018
-                    </p>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        
-        
-        
-        
-      </ion-card-content>
-  
-    </ion-card>
-  
-    <button ion-button block (click)="trocaCrreia()">Nova troca</button>
-  
-  
-  
-  </ion-content>
+                </ion-card-title>
+
+                <p>
+                  Data: 05/06/2017
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+
+              <ion-card-content>
+                <ion-card-title>
+                  <h4>Correia do alternador</h4>
+                  
+                </ion-card-title>
+                <p>
+                  Data: 09/04/2017
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+
+              <ion-card-content>
+                <ion-card-title>
+                  <h4>Correia do ar condicionado</h4>
+                  
+                </ion-card-title>
+                <p>
+                  Data: 03/02/2018
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

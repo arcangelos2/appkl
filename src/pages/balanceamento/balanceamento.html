@@ -14,71 +14,73 @@
 
 <ion-content padding>
 
+
+  <button ion-button block (click)="novoBalanceamento()">Novo Balanceamento</button>
+
+  <h4 class="title"> Histórico</h4>
+
+
   <ion-card>
 
     <ion-card-header>
       Balanceamentos realizados
-      
+
     </ion-card-header>
 
     <ion-card-content>
       <!-- Add card content here! -->
       <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-card>
-                
-                <ion-card-content>
-                  <ion-card-title>
-                    Suspensão
-                  </ion-card-title>
-                  <p>
-                    Amortecedores, molas.
-                  </p>
-                  <p>
-                     Data: 05/07/2016
-                    </p>
-                </ion-card-content>
-              </ion-card>
-            </ion-col>
-            <ion-col>
-              <ion-card>
-               
-                <ion-card-content>
-                  <ion-card-title>
-                    Alinhamento
-                  </ion-card-title>
-                  <p>
-                      Data: 09/09/2017
-                  </p>
-                </ion-card-content>
-              </ion-card>
-            </ion-col>
-            <ion-col>
-              <ion-card>
-               
-                <ion-card-content>
-                  <ion-card-title>
-                    Troca de Pneus
-                  </ion-card-title>
-                  <p>
-                      Data: 09/04/2018
-                  </p>
-                </ion-card-content>
-              </ion-card>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      
-      
-      
-      
+        <ion-row>
+          <ion-col>
+            <ion-card>
+
+              <ion-card-content>
+                <ion-card-title>
+                  <h4>Suspensão</h4>
+                  
+                </ion-card-title>
+                <p>
+                  Amortecedores, molas.
+                </p>
+                <p>
+                  Data: 05/07/2016
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+
+              <ion-card-content>
+                <ion-card-title>
+                  <h4> Alinhamento</h4>
+                 
+                </ion-card-title>
+                <p>
+                  Data: 09/09/2017
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+
+              <ion-card-content>
+                <ion-card-title>
+                  <h4>Troca de Pneus</h4>
+                  
+                </ion-card-title>
+                <p>
+                  Data: 09/04/2018
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
     </ion-card-content>
 
   </ion-card>
-
-  <button ion-button block (click)="novoBalanceamento()">Novo Balanceamento</button>
-
-
 
 </ion-content>

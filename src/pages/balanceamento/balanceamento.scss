@@ -1,62 +1,8 @@
 page-balanceamento {
-    font-family: Helvetica, Arial, sans-serif;
-  .center {
-    text-align: center;
-  }
-  .calendar-header-col {
-    font-size: 1rem;
-    color: #666;
-  }
-  .calendar-row {
-    &:last-child {
-      border-bottom: 1px solid #eee;
-    }
-    .calendar-col {
-      display: flex;
-      justify-content: center;
-      padding: 0.8rem;
-      font-size: 1.2rem;
-      border-left: 1px solid #eee;
-      border-top: 1px solid #eee;
-      &:last-child {
-        border-right: 1px solid #eee;
-      }
-    }
-    
-    .not-this-month {
-      color: #681f1f;
-      background: #eee;
-    }
-    .today {
-      color: #fff;
-      box-shadow: inset 0 0 10px #aaa;
-      background: #46b592;
-    }
-    .eventBlip {
-      background: #46b592;
-      width: 6.5px;
-      height: 6.5px;
-      display: inline-block;
-      border-radius: 6.5px;
-      position: absolute;
-      top: 3.5px;
-      right: 3.5px;
-    }
-    .select {
-      box-shadow: none;
-      color: #fff;
-      background: #46b592;
-    }
-  }
-
- 
+  
   .header-main {
-    background-color: $black !important;
-    color: #FFF !important;
+		background-color: #4682B4 !important;
 	}
-  
-  
-  
 	.toolbar-ios {
 		ion-title {
 			left: 50%;
@@ -70,13 +16,12 @@ page-balanceamento {
 			}
 		}
   }
-  
-
-	.header-btn{
-		margin-left: -35px !important;
-		color: #FFF !important;
-	}
-	.color-txt{
-		color: #FFF !important;
-	}
+  /* Siide menu design */
+.app-root ion-menu .menu-inner,
+.app-root ion-menu .content {
+  background-color:#5F9EA0;
+}
+.title{
+	margin-left: 10px;
+}
 }

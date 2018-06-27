@@ -1,7 +1,7 @@
 page-perfil {
     
     .header-main {
-		background-color: $black !important;
+		background-color: #4682B4 !important;
 	}
 	.toolbar-ios {
 		ion-title {
@@ -15,7 +15,12 @@ page-perfil {
 				margin: 12px 0;
 			}
 		}
-	}
+  }
+  /* Siide menu design */
+.app-root ion-menu .menu-inner,
+.app-root ion-menu .content {
+  background-color:#5F9EA0;
+}
 	.header-btn{
 		margin-left: -35px !important;
 		color: #FFF !important;
