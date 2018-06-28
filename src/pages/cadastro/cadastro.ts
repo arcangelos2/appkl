@@ -72,6 +72,7 @@ export class CadastroPage {
         
         if (data.status == true) {
           this.presentToast('Cliente cadastrado com sucesso!');
+          this.navCtrl.setRoot(LoginPage);
         } else {
           this.presentToast('Cliente não foi cadastrado!');
         }
