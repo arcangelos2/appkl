@@ -37,6 +37,10 @@ import { NovaCorreiaPageModule } from '../pages/nova-correia/nova-correia.module
 import { RevisaoPageModule } from '../pages/revisao/revisao.module';
 import { NovaRevisaoPageModule } from '../pages/nova-revisao/nova-revisao.module';
 import { NovaAgendaPageModule } from '../pages/nova-agenda/nova-agenda.module';
+import { NovaLocacaoPageModule } from '../pages/nova-locacao/nova-locacao.module';
+import { Locacao24598PageModule } from '../pages/locacao24598/locacao24598.module';
+import { DataServicoPageModule } from '../pages/data-servico/data-servico.module';
+import { HoraServicoPageModule } from '../pages/hora-servico/hora-servico.module';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import { NovaAgendaPageModule } from '../pages/nova-agenda/nova-agenda.module';
     NovaCorreiaPageModule,
     RevisaoPageModule,
     NovaRevisaoPageModule,
-    NovaAgendaPageModule
+    NovaAgendaPageModule,
+    NovaLocacaoPageModule,
+    Locacao24598PageModule,
+    DataServicoPageModule,
+    HoraServicoPageModule,
 
   ],
   bootstrap: [IonicApp],

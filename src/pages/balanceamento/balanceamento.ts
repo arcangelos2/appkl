@@ -17,17 +17,12 @@ export class BalanceamentoPage {
     public navCtrl: NavController, public navParams: NavParams) {
   }
   //metodo para não sair do celular
-  backButtonAction() {
-    this.viewCtrl.dismiss();
-}
+  
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad BalanceamentoPage');
   }
-  logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
-
+ 
   novoBalanceamento() {
     this.navCtrl.push(NovoBalanceamentoPage);
   }

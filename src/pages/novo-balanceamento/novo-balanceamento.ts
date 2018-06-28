@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
-import { LoginPage } from '../login/login';
 import { ServicosPage } from '../servicos/servicos';
+import { DataServicoPage } from '../data-servico/data-servico';
+import { HoraServicoPage } from '../hora-servico/hora-servico';
+import { UploadPage } from '../upload/upload';
 
 
 
@@ -21,11 +23,9 @@ export class NovoBalanceamentoPage {
   }
   
   //metodo para nao sair do celular
-  backButtonAction() {
-    this.viewCtrl.dismiss();
-  }
-  logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+  
+  tirarFoto(){
+    this.navCtrl.push(UploadPage);
   }
   enviarBalanceamento(){
     let toast = this.toast.create({

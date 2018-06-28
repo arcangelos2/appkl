@@ -6,11 +6,6 @@
     <ion-title>
       Serviços
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only class="header-btn" (click)="logout()">
-        <ion-icon name="md-log-out"></ion-icon>
-      </button>
-    </ion-buttons>
 
   </ion-navbar>
 </ion-header>
@@ -20,33 +15,18 @@
 
   <ion-list>
     <button ion-item (click)="balenceamento()">
-      <ion-avatar item-start (click)="balenceamento()">
-        <img src="assets/imgs/balenceamento.jpg">
-      </ion-avatar>
       Balanceamento
     </button>
     <button ion-item (click)="trocaOleo()">
-      <ion-avatar item-start >
-        <img src="assets/imgs/oleo.jpg">
-      </ion-avatar>
       Troca de Óleo
     </button>
-    <button ion-item (click)="trocaCorreia()" >
-      <ion-avatar item-start>
-        <img src="assets/imgs/correia.jpg">
-      </ion-avatar>
+    <button ion-item (click)="trocaCorreia()">
       Troca de Correia
     </button>
     <button ion-item (click)="revisao()">
-      <ion-avatar item-start>
-        <img src="assets/imgs/revisao.jpg">
-      </ion-avatar>
       Revisão
     </button>
     <button ion-item (click)="outros()">
-      <ion-avatar item-start>
-        <img src="assets/imgs/outros.jpg">
-      </ion-avatar>
       Outros
     </button>
 

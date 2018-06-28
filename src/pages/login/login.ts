@@ -41,7 +41,6 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  
 
   // For User Login
 
@@ -65,29 +64,6 @@ export class LoginPage {
     error => {
       this.presentToast('Aconteceu algum erro: !'+error);
     };
-
-  }
-
-
-  // For Social Login
-
-  socialLogin(isLogin) {
-    if (isLogin == "facebook") {
-      this.moveToHome(this.loginData);
-
-    } else if (isLogin == "twitter") {
-      // this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider())
-      // 	.then(res => {
-      // 		 this.moveToHome(res);
-      // 	})
-      // 	.catch(err => console.log('err',err));
-    } else if (isLogin == "github") {
-      // this.afAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider())
-      // 	.then(res => {
-      // 		 this.moveToHome(res);
-      // 	})
-      // 	.catch(err => console.log('err',err));
-    }
 
   }
 

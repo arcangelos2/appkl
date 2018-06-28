@@ -20,7 +20,7 @@ export class NovaTrocaPage {
   	this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 
-  enviarOleo(){
+  enviar(){
     let toast = this.toast.create({
       message: 'Cliente troca de óleo agendada com sucesso',
       duration: 3000,

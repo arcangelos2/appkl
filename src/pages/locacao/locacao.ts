@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import { NovaLocacaoPage } from '../nova-locacao/nova-locacao';
+import { Locacao24598Page } from '../locacao24598/locacao24598';
 
-/**
- * Generated class for the LocacaoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -22,7 +17,11 @@ export class LocacaoPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad LocacaoPage');
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
+  addLocacao(){
+  	this.navCtrl.push(NovaLocacaoPage);
+  }
+
+  contrato(){
+    this.navCtrl.push(Locacao24598Page);
   }
 }

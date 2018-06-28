@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BalanceamentoPage } from '../balanceamento/balanceamento';
-import { LoginPage } from '../login/login';
+
 import { AgendaPage } from '../agenda/agenda';
 import { TrocaOleoPage } from '../troca-oleo/troca-oleo';
 import { TrocaCorreiaPage } from '../troca-correia/troca-correia';
@@ -37,9 +37,5 @@ export class ServicosPage {
   outros(){
     this.navCtrl.push(AgendaPage);
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
-  
   
 }

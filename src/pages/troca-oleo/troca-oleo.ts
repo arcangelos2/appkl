@@ -17,10 +17,8 @@ export class TrocaOleoPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad TrocaOleoPage');
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
-  trocaOleo(){
+ 
+add(){
     this.navCtrl.push(NovaTrocaPage);
   }
 

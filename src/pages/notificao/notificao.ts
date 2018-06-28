@@ -17,7 +17,5 @@ export class NotificaoPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NotificaoPage');
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
+
 }

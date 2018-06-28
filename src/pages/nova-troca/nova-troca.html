@@ -3,11 +3,8 @@
     <ion-title>
       Agendar Troca de óleo
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only class="header-btn" (click)="logout()">
-        <ion-icon name="md-log-out"></ion-icon>
-      </button>
-    </ion-buttons>
+  
+   
   </ion-navbar>
 </ion-header>
 
@@ -16,39 +13,101 @@
 
   <ion-card>
 
-    <ion-card-content>
-      <ion-card-title>
-        <h4>Selecione a data</h4>
-      </ion-card-title>
-      <p>
-        <ion-item padding-right>
+    <ion-card-content (click)="data()">
 
-          <ion-label>
-            <ion-icon name="card"></ion-icon>
-          </ion-label>
-          <ion-input type="date"></ion-input>
+      <ion-list>
+        <ion-item>
+          <ion-label>Selecione o dia</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="29">29</ion-option>
+            <ion-option value="30">30</ion-option>
+            <ion-option value="02">02</ion-option>
+            <ion-option value="03">03</ion-option>
+            <ion-option value="04">04</ion-option>
+            <ion-option value="05">05</ion-option>
+            <ion-option value="06">06</ion-option>
+            <ion-option value="07">07</ion-option>
+
+            <ion-option value="09">09</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+
+            <ion-option value="12">12</ion-option>
+            <ion-option value="13">13</ion-option>
+            <ion-option value="14">14</ion-option>
+
+            <ion-option value="16">16</ion-option>
+            <ion-option value="17">17</ion-option>
+
+            <ion-option value="18">18</ion-option>
+            <ion-option value="19">19</ion-option>
+            <ion-option value="20">20</ion-option>
+            <ion-option value="21">21</ion-option>
+            <ion-option value="23">23</ion-option>
+
+            <ion-option value="24">24</ion-option>
+            <ion-option value="25">25</ion-option>
+            <ion-option value="26">26</ion-option>
+            <ion-option value="27">27</ion-option>
+            <ion-option value="28">28</ion-option>
+
+            <ion-option value="301">30</ion-option>
+            <ion-option value="311">31</ion-option>
+          </ion-select>
         </ion-item>
-      </p>
+      </ion-list>
 
     </ion-card-content>
   </ion-card>
-  <ion-card>
 
-    <ion-card-content>
-      <ion-card-title>
-        <h4>Selecione a hora</h4>
-      </ion-card-title>
-      <p>
-        <ion-item padding-right>
+  <ion-card (click)="hora()">
 
-          <ion-label>
-            <ion-icon name="card"></ion-icon>
-          </ion-label>
-          <ion-input type="time"></ion-input>
-        </ion-item>
-      </p>
+    <ion-list>
+      <ion-item>
+        <ion-label>Selecione o hora</ion-label>
+        <ion-select [(ngModel)]="gaming">
 
-    </ion-card-content>
+          <ion-option value="29">15:00 hs às 15:00 hs</ion-option>
+          <ion-option value="30">16:00 hs às 17:00 hs</ion-option>
+          <ion-option value="02">17:00 hs às 18:00 hs</ion-option>
+          <ion-option value="03">18:00 hs às 19:00 hs</ion-option>
+
+
+          <ion-option value="04">08:00 hs às 09:00 hs</ion-option>
+          <ion-option value="05">09:00 hs às 10:00 hs</ion-option>
+          <ion-option value="06">10:00 hs às 11:00 hs</ion-option>
+          <ion-option value="07">11:00 hs às 12:00 hs</ion-option>
+          <ion-option value="09">13:00 hs às 14:00 hs </ion-option>
+          <ion-option value="10">15:00 hs às 15:00 hs</ion-option>
+          <ion-option value="11">16:00 hs às 17:00 hs</ion-option>
+          <ion-option value="12">17:00 hs às 18:00 hs</ion-option>
+          <ion-option value="13">18:00 hs às 19:00 hs</ion-option>
+
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
   </ion-card>
-  <button ion-button block (click)="enviarOleo()">Enviar</button>
+
+  <ion-item padding-right>
+    <ion-label straked> KM</ion-label>
+    <ion-input type="number" placeholder="Digite sua kilometragem"></ion-input>
+  </ion-item>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content (click)="tirarFoto()">
+
+            adicionar foto serviço
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button block (click)="enviar()">Enviar</button>
 </ion-content>

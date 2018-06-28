@@ -19,8 +19,8 @@
     
     
     <ion-buttons start>
-      <button ion-button icon-only class="header-btn" (click)="logout()">
-        <ion-icon name="md-log-out"></ion-icon>
+      <button ion-button (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -35,6 +35,7 @@
 <ion-content padding>
 
   <h2>Bem vindo: {{userData.email}}</h2>
+  
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -89,9 +90,5 @@
     </ion-row>
   </ion-grid>
 
-
-  <ion-card-content>
-
-  </ion-card-content>
 
 </ion-content>

@@ -17,11 +17,9 @@ export class NovaCorreiaPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaCorreiaPage');
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
+  
 
-  enviarCorreia(){
+  enviar(){
     let toast = this.toast.create({
       message: 'Cliente troca de correia agendada com sucesso',
       duration: 3000,

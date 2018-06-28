@@ -38,7 +38,8 @@ page-perfil {
         padding: 5px;
     }
     .circle {
-        width: 40%;
+        width: 50%;
+        height: 50px;
         border-radius: 100%;
         margin: 10px auto 0 auto;
   }
@@ -115,13 +116,11 @@ page-perfil {
         background-repeat: repeat;
         content: '';
       }
-      .sepretor-or p::after {
-        float: right;
+
+      .ion-label{
+        color: $black  ;
       }
-      .eye-icon-btn{
-        background-color: transparent !important;
-        color: $black;
-        font-size: 2.2rem !important;
-        }
+     
+      
 
 }

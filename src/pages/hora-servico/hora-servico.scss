@@ -1,0 +1,28 @@
+page-hora-servico {
+
+    .header-main {
+		background-color: #4682B4 !important;
+	}
+	.toolbar-ios {
+		ion-title {
+			left: 50%;
+			display: block;
+			margin: 0 auto;
+			@include calc('max-width', '100% - 90px');
+			width: auto;
+			@include transform(translateX(-50%));
+			p {
+				margin: 12px 0;
+			}
+		}
+  }
+  /* Siide menu design */
+.app-root ion-menu .menu-inner,
+.app-root ion-menu .content {
+  background-color:#5F9EA0;
+}
+.title{
+	margin-left: 10px;
+}
+
+}

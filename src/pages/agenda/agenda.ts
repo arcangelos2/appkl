@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { NovaAgendaPage } from '../nova-agenda/nova-agenda';
-import { LoginPage } from '../login/login';
+
 
 
 
@@ -13,10 +13,8 @@ import { LoginPage } from '../login/login';
 export class AgendaPage {
 
   constructor(public navCtrl: NavController) { }
-  logout(){
-    this.navCtrl.setRoot(LoginPage);
-  }
-  outros(){
+  
+  add(){
     this.navCtrl.push(NovaAgendaPage);
   }
     

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
-import { LoginPage } from '../login/login';
+
 
 @IonicPage()
 @Component({
@@ -17,11 +17,9 @@ export class NovaAgendaPage {
     //console.log('ionViewDidLoad NovaAgendaPage');
   }
 
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
+ 
 
-  servicos(){
+  enviar(){
     
     let toast = this.toast.create({
       message: 'Cliente serviços agendado com sucesso',

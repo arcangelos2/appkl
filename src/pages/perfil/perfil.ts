@@ -4,7 +4,7 @@ import { Cliente } from '../../model/model-cliente';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ClienteProvider } from '../../providers/cliente/cliente';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { LoginPage } from '../login/login';
+import { HomePage } from '../home/home';
 
 
 
@@ -17,7 +17,7 @@ export class PerfilPage {
 
   img = '';
   
-  confirmarSenha: any;
+  //confirmarSenha: any;
 
   cliente = new Cliente();
   cliente_temp: any;
@@ -26,17 +26,16 @@ export class PerfilPage {
   cpf: AbstractControl;
   rg: AbstractControl;
   email: AbstractControl;
-  senha: AbstractControl;
+  //senha: AbstractControl;
   habilitacao: AbstractControl;
   validade_hab: AbstractControl;
   data_nascimento: AbstractControl;
-  cnfpass: AbstractControl;
-  passwordtype: string = 'password';
-  cnfpasswordtype: string = 'password';
-  cnfpasseye: string = 'eye';
-  passeye: string = 'eye';
-  filePath: any;
-  actionSheetCtrl: any;
+  //cnfpass: AbstractControl;
+  //passwordtype: string = 'password';
+  //cnfpasswordtype: string = 'password';
+  //cnfpasseye: string = 'eye';
+  //passeye: string = 'eye';
+  
 
 
   constructor(public platform: Platform, public toastCtrl: ToastController,public camera: Camera,
@@ -49,29 +48,26 @@ export class PerfilPage {
       'cpf': ['', Validators.compose([Validators.required])],
       'rg': ['', Validators.compose([Validators.required])],
       'email': ['', Validators.compose([Validators.required])],
-      'senha': ['', Validators.compose([Validators.required])],
+      //'senha': ['', Validators.compose([Validators.required])],
       'habilitacao': ['', Validators.compose([Validators.required])],
       'validade_hab': ['', Validators.compose([Validators.required])],
       'data_nascimento': ['', Validators.compose([Validators.required])],
-      'cnfpass': ['', Validators.compose([Validators.required])]
+      //'cnfpass': ['', Validators.compose([Validators.required])]
     });
 
     this.nome = this.authForm.controls['nome'];
     this.cpf = this.authForm.controls['cpf'];
     this.rg = this.authForm.controls['rg'];
     this.email = this.authForm.controls['email'];
-    this.senha = this.authForm.controls['senha'];
+   // this.senha = this.authForm.controls['senha'];
     this.habilitacao = this.authForm.controls['habilitacao'];
     this.validade_hab = this.authForm.controls['validade_hab'];
     this.data_nascimento = this.authForm.controls['data_nascimento'];
-    this.cnfpass = this.authForm.controls['cnfpass'];
+   // this.cnfpass = this.authForm.controls['cnfpass'];
 
 
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
-
+  
   ionViewDidLoad() {
 
     this.providerCliente.getStorage("cliente").then(cliente => {
@@ -91,7 +87,7 @@ export class PerfilPage {
   }
 
   editar() {
-    if (this.cliente.senha == this.confirmarSenha) {
+    if (this.cliente) {
       this.providerCliente.editCliente(this.cliente).subscribe((data: any) => {
        this.cliente = data;
 
@@ -99,6 +95,7 @@ export class PerfilPage {
 
         if (data.status == true) {
           this.presentToast('Cliente atualizado com sucesso!');
+          this.navCtrl.setRoot(HomePage);
         } else {
           this.presentToast('Cliente não foi atualizado!');
         }
@@ -123,7 +120,7 @@ export class PerfilPage {
   }
 
 
-  managePassword() {
+ /* managePassword() {
     if (this.passwordtype == 'password') {
       this.passwordtype = 'text';
       this.passeye = 'eye-off';
@@ -140,7 +137,7 @@ export class PerfilPage {
       this.cnfpasswordtype = 'password';
       this.cnfpasseye = 'eye';
     }
-  }
+  }*/
   //funcao tirar foto a imagem ainda nao vai pro servidor 
 tirarFoto() {
   const options: CameraOptions = {

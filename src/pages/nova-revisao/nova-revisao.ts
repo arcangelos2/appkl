@@ -18,10 +18,8 @@ export class NovaRevisaoPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaRevisaoPage');
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
-  enviarRevisao(){
+ 
+  enviar(){
     let toast = this.toast.create({
       message: 'Cliente revisão agendada com sucesso',
       duration: 3000,

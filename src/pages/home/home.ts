@@ -21,14 +21,10 @@ export class HomePage {
   }
   //metodo para nao sair do celular
   backButtonAction() {
-    this.viewCtrl.dismiss();
+    //this.viewCtrl.dismiss();
   }
-  note(){
+  notifications(){
     this.navCtrl.push(NotificaoPage);
-  }
-
-  logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 
 }

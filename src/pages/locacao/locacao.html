@@ -7,8 +7,8 @@
       Locação
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only class="header-btn" (click)="logout()">
-        <ion-icon name="md-log-out"></ion-icon>
+      <button ion-button icon-only class="header-btn" (click)="addLocacao()">
+        <ion-icon name="add-circle"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -17,5 +17,14 @@
 
 
 <ion-content padding>
+
+    <ion-list>
+        <ion-list-header>
+          Lista dos Contratos
+        </ion-list-header>
+        <ion-item (click)="contrato()">Contrato 24598</ion-item>
+        <ion-item>Contrato 25331</ion-item>
+       
+      </ion-list>
 
 </ion-content>

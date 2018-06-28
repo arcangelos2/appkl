@@ -16,10 +16,8 @@ export class TrocaCorreiaPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad TrocaCorreiaPage');
   }
-  logout(){
-  	this.navCtrl.parent.parent.setRoot(LoginPage);
-  }
-  trocaCrreia(){
+  
+  add(){
     this.navCtrl.push(NovaCorreiaPage);
   }
 

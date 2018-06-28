@@ -27,12 +27,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', index: 0 },
-      { title: 'Locacao', index: 1 },
+      { title: 'Inicio', index: 0 },
+      { title: 'Locação', index: 1 },
       { title: 'Serviços', index: 2 },
       { title: 'Perfil', index: 3},
-      { title: 'Fotos serviços', index: 4 },
-      { title: 'Notificações', index: 5},
+      { title: 'sair', index: 5},
       
     ];
 
