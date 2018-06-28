@@ -4,6 +4,7 @@ import { IonicPage, NavController,ActionSheetController, ToastController, Loadin
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Http } from '@angular/http';
 import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
+import { LoginPage } from '../login/login';
 
 
 
@@ -25,6 +26,10 @@ export class UploadPage {
     public http: Http, public actionSheetCtrl: ActionSheetController,
    
     public toastCtrl: ToastController) { }
+
+    logout(){
+      this.navCtrl.parent.parent.setRoot(LoginPage);
+    }
 
   getImage() {
      this.imageFileName = "";

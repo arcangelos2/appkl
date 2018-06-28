@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 
 @IonicPage()
@@ -14,7 +15,9 @@ export class NotificaoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotificaoPage');
+    //console.log('ionViewDidLoad NotificaoPage');
   }
-
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 }

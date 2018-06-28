@@ -29,9 +29,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', index: 0 },
       { title: 'Locacao', index: 1 },
-      { title: 'Servicos', index: 2 },
+      { title: 'Serviços', index: 2 },
       { title: 'Perfil', index: 3},
-      { title: 'Fotos', index: 4 },
+      { title: 'Fotos serviços', index: 4 },
       { title: 'Notificações', index: 5},
       
     ];

@@ -25,11 +25,10 @@ import { NovoBalanceamentoPageModule } from '../pages/novo-balanceamento/novo-ba
 import { UploadPageModule } from '../pages/upload/upload.module';
 import { HttpModule } from '@angular/http';
 import { Calendar } from '@ionic-native/calendar';
-import { CalendarioPage } from '../pages/calendario/calendario';
 import { AgendaPageModule } from '../pages/agenda/agenda.module';
 
 import { CalendarModule } from "ion2-calendar";
-import { CalendarioCorreiaPageModule } from '../pages/calendario-correia/calendario-correia.module';
+
 import { NotificaoPageModule } from '../pages/notificao/notificao.module';
 import { TrocaOleoPageModule } from '../pages/troca-oleo/troca-oleo.module';
 import { NovaTrocaPageModule } from '../pages/nova-troca/nova-troca.module';
@@ -37,14 +36,14 @@ import { TrocaCorreiaPageModule } from '../pages/troca-correia/troca-correia.mod
 import { NovaCorreiaPageModule } from '../pages/nova-correia/nova-correia.module';
 import { RevisaoPageModule } from '../pages/revisao/revisao.module';
 import { NovaRevisaoPageModule } from '../pages/nova-revisao/nova-revisao.module';
-
+import { NovaAgendaPageModule } from '../pages/nova-agenda/nova-agenda.module';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    CalendarioPage
+    
   ],
   imports: [
 
@@ -63,14 +62,14 @@ import { NovaRevisaoPageModule } from '../pages/nova-revisao/nova-revisao.module
     HttpModule,
     AgendaPageModule,
     CalendarModule,
-    CalendarioCorreiaPageModule,
     NotificaoPageModule,
     TrocaOleoPageModule,
     NovaTrocaPageModule,
     TrocaCorreiaPageModule,
     NovaCorreiaPageModule,
     RevisaoPageModule,
-    NovaRevisaoPageModule
+    NovaRevisaoPageModule,
+    NovaAgendaPageModule
 
   ],
   bootstrap: [IonicApp],
@@ -91,10 +90,7 @@ import { NovaRevisaoPageModule } from '../pages/nova-revisao/nova-revisao.module
     FilePath,
     FileTransfer,
     FileTransferObject,
-    Calendar
-
-
-
+    Calendar,
   ]
 })
 export class AppModule { }

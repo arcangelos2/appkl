@@ -3,27 +3,28 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { ServicosPage } from '../servicos/servicos';
 import { LoginPage } from '../login/login';
 
-
-
 @IonicPage()
 @Component({
-  selector: 'page-nova-revisao',
-  templateUrl: 'nova-revisao.html',
+  selector: 'page-nova-agenda',
+  templateUrl: 'nova-agenda.html',
 })
-export class NovaRevisaoPage {
+export class NovaAgendaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toast:ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public toast: ToastController) {
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad NovaRevisaoPage');
+    //console.log('ionViewDidLoad NovaAgendaPage');
   }
+
   logout(){
   	this.navCtrl.parent.parent.setRoot(LoginPage);
   }
-  enviarRevisao(){
+
+  servicos(){
+    
     let toast = this.toast.create({
-      message: 'Cliente revisão agendada com sucesso',
+      message: 'Cliente serviços agendado com sucesso',
       duration: 3000,
       position: 'top'
     });
@@ -36,4 +37,6 @@ export class NovaRevisaoPage {
     
   }
 
-}
+  }
+
+

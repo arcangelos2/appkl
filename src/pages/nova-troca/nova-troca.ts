@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
-
-/**
- * Generated class for the NovaTrocaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -16,16 +10,29 @@ import { ServicosPage } from '../servicos/servicos';
 })
 export class NovaTrocaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toast:ToastController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaTrocaPage');
   }
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 
   enviarOleo(){
-    alert("Troca de óleo agendado");
+    let toast = this.toast.create({
+      message: 'Cliente troca de óleo agendada com sucesso',
+      duration: 3000,
+      position: 'top'
+    });
     this.navCtrl.setRoot(ServicosPage);
+    toast.onDidDismiss(() => {
+      console.log('ok');
+    });
+  
+    toast.present();
+    
   }
 
 }

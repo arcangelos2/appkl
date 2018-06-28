@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
+import { LoginPage } from '../login/login';
 
-/**
- * Generated class for the NovaCorreiaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -16,14 +11,28 @@ import { ServicosPage } from '../servicos/servicos';
 })
 export class NovaCorreiaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toast:ToastController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaCorreiaPage');
   }
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
+
   enviarCorreia(){
-    alert("Troca de correia agendada");
+    let toast = this.toast.create({
+      message: 'Cliente troca de correia agendada com sucesso',
+      duration: 3000,
+      position: 'top'
+    });
     this.navCtrl.setRoot(ServicosPage);
+    toast.onDidDismiss(() => {
+      console.log('ok');
+    });
+  
+    toast.present();
+    
   }
 }

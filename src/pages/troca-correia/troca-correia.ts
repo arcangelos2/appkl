@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NovaCorreiaPage } from '../nova-correia/nova-correia';
-
-/**
- * Generated class for the TrocaCorreiaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -21,6 +15,9 @@ export class TrocaCorreiaPage {
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad TrocaCorreiaPage');
+  }
+  logout(){
+  	this.navCtrl.parent.parent.setRoot(LoginPage);
   }
   trocaCrreia(){
     this.navCtrl.push(NovaCorreiaPage);
