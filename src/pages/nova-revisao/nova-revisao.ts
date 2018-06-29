@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
 import { LoginPage } from '../login/login';
+import { UploadPage } from '../upload/upload';
 
 
 
@@ -12,14 +13,17 @@ import { LoginPage } from '../login/login';
 })
 export class NovaRevisaoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toast:ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toast: ToastController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaRevisaoPage');
   }
- 
-  enviar(){
+  tirarFoto() {
+    this.navCtrl.push(UploadPage);
+  }
+
+  enviar() {
     let toast = this.toast.create({
       message: 'Cliente revisão agendada com sucesso',
       duration: 3000,
@@ -29,9 +33,9 @@ export class NovaRevisaoPage {
     toast.onDidDismiss(() => {
       console.log('ok');
     });
-  
+
     toast.present();
-    
+
   }
 
 }

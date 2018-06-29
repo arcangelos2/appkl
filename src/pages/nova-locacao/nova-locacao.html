@@ -8,13 +8,102 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <ion-card (click)="loja()">
 
-    <ion-item>Loja</ion-item>
-    <ion-item>Data</ion-item>
-    <ion-item>Hora</ion-item>
-    <ion-item></ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-label>Lojas</ion-label>
+        <ion-select [(ngModel)]="gaming">
+          <ion-option value=">matriz">matriz</ion-option>
+          <ion-option value="Praça 14">Praça 14</ion-option>
+          <ion-option value="CACHOERINHA">Cachoeirinha</ion-option>
+          <ion-option value="ZONA LESTE">Zona Leste</ion-option>
+          <ion-option value="FILIAL BOA VISTA/RR">Boa Vista/RR</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 
-  </ion-list>
+  <ion-card>
+
+    <ion-card-content (click)="data()">
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Dia</ion-label>
+          <ion-select [(ngModel)]="data">
+            <ion-option value="29">29</ion-option>
+            <ion-option value="30">30</ion-option>
+            <ion-option value="02">02</ion-option>
+            <ion-option value="03">03</ion-option>
+            <ion-option value="04">04</ion-option>
+            <ion-option value="05">05</ion-option>
+            <ion-option value="06">06</ion-option>
+            <ion-option value="07">07</ion-option>
+
+            <ion-option value="09">09</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+
+            <ion-option value="12">12</ion-option>
+            <ion-option value="13">13</ion-option>
+            <ion-option value="14">14</ion-option>
+
+            <ion-option value="16">16</ion-option>
+            <ion-option value="17">17</ion-option>
+
+            <ion-option value="18">18</ion-option>
+            <ion-option value="19">19</ion-option>
+            <ion-option value="20">20</ion-option>
+            <ion-option value="21">21</ion-option>
+            <ion-option value="23">23</ion-option>
+
+            <ion-option value="24">24</ion-option>
+            <ion-option value="25">25</ion-option>
+            <ion-option value="26">26</ion-option>
+            <ion-option value="27">27</ion-option>
+            <ion-option value="28">28</ion-option>
+
+            <ion-option value="301">30</ion-option>
+            <ion-option value="311">31</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="hora()">
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-select [(ngModel)]="hora">
+
+          <ion-option value="29">15:00 </ion-option>
+          <ion-option value="30">16:00  </ion-option>
+          <ion-option value="02">17:00  </ion-option>
+          <ion-option value="03">18:00 </ion-option>
+
+
+          <ion-option value="04">08:00 </ion-option>
+          <ion-option value="05">09:00 </ion-option>
+          <ion-option value="06">10:00 </ion-option>
+          <ion-option value="07">11:00 </ion-option>
+          <ion-option value="09">13:00 </ion-option>
+          <ion-option value="10">15:00</ion-option>
+          <ion-option value="11">16:00</ion-option>
+          <ion-option value="12">17:00</ion-option>
+          <ion-option value="13">18:00</ion-option>
+
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+  <ion-buttons end>
+    <button ion-button btn block (click)="enviarLocacao()">Locar </button>
+  </ion-buttons>
 
 </ion-content>

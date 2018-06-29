@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
+import { UploadPage } from '../upload/upload';
 
 
 @IonicPage()
@@ -10,17 +11,19 @@ import { ServicosPage } from '../servicos/servicos';
 })
 export class NovaAgendaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public toast: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toast: ToastController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaAgendaPage');
   }
+  tirarFoto() {
+    this.navCtrl.push(UploadPage);
+  }
 
- 
 
-  enviar(){
-    
+  enviar() {
+
     let toast = this.toast.create({
       message: 'Cliente serviços agendado com sucesso',
       duration: 3000,
@@ -30,11 +33,11 @@ export class NovaAgendaPage {
     toast.onDidDismiss(() => {
       console.log('ok');
     });
-  
+
     toast.present();
-    
-  }
 
   }
+
+}
 
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController,ActionSheetController, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, ActionSheetController, ToastController, LoadingController } from 'ionic-angular';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Http } from '@angular/http';
@@ -14,9 +14,15 @@ import { LoginPage } from '../login/login';
   templateUrl: 'upload.html',
 })
 export class UploadPage {
-  
+
   imageFileName: any = "";
   nome: any;
+
+  img1 = "";
+  img2 = "";
+  img3 = "";
+  img4 = "";
+  img5 = "";
 
 
   constructor(public navCtrl: NavController,
@@ -24,16 +30,16 @@ export class UploadPage {
     private camera: Camera,
     public loadingCtrl: LoadingController,
     public http: Http, public actionSheetCtrl: ActionSheetController,
-   
+
     public toastCtrl: ToastController) { }
 
-    logout(){
-      this.navCtrl.parent.parent.setRoot(LoginPage);
-    }
+  logout() {
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 
   getImage() {
-     this.imageFileName = "";
-     
+    this.imageFileName = "";
+
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -51,7 +57,7 @@ export class UploadPage {
       //this.imageUri = 'data:image/jpeg;base64,' + imageData;
       //this.imageFileName = this.imageUri;
       let base64image = 'data:image/jpeg;base64,' + imageData;
-        this.imageFileName = base64image;
+      this.imageFileName = base64image;
     }, (err) => {
       console.log(err);
       this.presentToast(err);
@@ -141,5 +147,113 @@ export class UploadPage {
 
     toast.present();
   }
- 
+
+  //fotos 
+  //funcao tirar foto a imagem ainda nao vai pro servidor 
+  lateral1() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+
+      allowEdit: true,
+      targetWidth: 300,
+      targetHeight: 300
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.img1 = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
+  }
+  //lateral 2
+  lateral2() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+
+      allowEdit: true,
+      targetWidth: 300,
+      targetHeight: 300
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.img2 = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
+  }
+  //lateral3
+  lateral3() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+
+      allowEdit: true,
+      targetWidth: 300,
+      targetHeight: 300
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.img3 = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
+  }
+  //lateral4
+  lateral4() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+
+      allowEdit: true,
+      targetWidth: 300,
+      targetHeight: 300
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.img4 = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
+  }
+    //lateral5
+    lateral5() {
+      const options: CameraOptions = {
+        quality: 100,
+        destinationType: this.camera.DestinationType.DATA_URL,
+        encodingType: this.camera.EncodingType.JPEG,
+        mediaType: this.camera.MediaType.PICTURE,
+  
+        allowEdit: true,
+        targetWidth: 300,
+        targetHeight: 300
+      }
+  
+      this.camera.getPicture(options).then((imageData) => {
+        // imageData is either a base64 encoded string or a file URI
+        // If it's base64:
+        this.img5 = 'data:image/jpeg;base64,' + imageData;
+      }, (err) => {
+        // Handle error
+      });
+    }
+
+
 }

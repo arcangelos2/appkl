@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
 import { LoginPage } from '../login/login';
+import { UploadPage } from '../upload/upload';
 
 @IonicPage()
 @Component({
@@ -33,6 +34,10 @@ export class NovaTrocaPage {
   
     toast.present();
     
+  }
+
+  tirarFoto(){
+    this.navCtrl.push(UploadPage);
   }
 
 }

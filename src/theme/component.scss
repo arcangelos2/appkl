@@ -1,6 +1,3 @@
-/*
- * Component SCSS
- */
 
 .flex {
   @include flexbox();
@@ -35,7 +32,7 @@
 }
 
 .bg-img {
-  background-image: url(../assets/imgs/bg.jpg);
+ background-image: url(../assets/imgs/teste.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -47,7 +44,7 @@
 .round-img {
   img {
     width: 100px;
-    height: 100px;
+    height: 100spx;
     @include border-radius(100%);
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServicosPage } from '../servicos/servicos';
 import { LoginPage } from '../login/login';
+import { UploadPage } from '../upload/upload';
 
 
 @IonicPage()
@@ -17,7 +18,9 @@ export class NovaCorreiaPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad NovaCorreiaPage');
   }
-  
+  tirarFoto(){
+    this.navCtrl.push(UploadPage);
+  }
 
   enviar(){
     let toast = this.toast.create({

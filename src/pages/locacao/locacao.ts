@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NovaLocacaoPage } from '../nova-locacao/nova-locacao';
 import { Locacao24598Page } from '../locacao24598/locacao24598';
+import { Contrato25331Page } from '../contrato25331/contrato25331';
 
 
 @IonicPage()
@@ -23,5 +24,8 @@ export class LocacaoPage {
 
   contrato(){
     this.navCtrl.push(Locacao24598Page);
+  }
+  contrato2(){
+    this.navCtrl.push(Contrato25331Page);
   }
 }

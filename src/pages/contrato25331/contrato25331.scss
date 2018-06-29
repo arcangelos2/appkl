@@ -1,6 +1,6 @@
-page-nova-troca {
+page-contrato25331 {
     .header-main {
-			background-color: #4682B4 !important;
+		background-color: #4682B4 !important;
 	}
 	.toolbar-title-md {
 		padding: 0 12px;
@@ -30,10 +30,12 @@ page-nova-troca {
     }
     .ion-title  {
         color: #FFF !important;
-	}
-	.list span {
-		padding: 0 5px;
-		 border-right: 0px solid rgb(242, 244, 247);
-	}
+		}
+		/* Siide menu design */
+.app-root ion-menu .menu-inner,
+.app-root ion-menu .content {
+  background-color:#5F9EA0;
+}
+
 
 }

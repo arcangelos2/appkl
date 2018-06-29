@@ -16,15 +16,18 @@
     <ion-title>
       <p class="color-txt">{{userData.email}}</p>
     </ion-title>
-    
-    
+
+
     <ion-buttons start>
       <button ion-button (click)="notifications()">
         <ion-icon name="notifications"></ion-icon>
       </button>
-      <button ion-button (click)="sair()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
+
+      <button ion-button></button> 
+
+        <button ion-button (click)="sair()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
     </ion-buttons>
 
     <ion-buttons left>
@@ -38,7 +41,7 @@
 <ion-content padding>
 
   <h2>Bem vindo: {{userData.email}}</h2>
-  
+
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -49,13 +52,15 @@
               Nossa Frota
             </ion-card-title>
             <p>
-                A frota da KL Rent a Car é composta por 600 veículos, de médio e grande porte, com 2 ou 4 portas, equipados cd player e ar condicionado. Dentre os modelos e existentes destacamos: Honda CRV, New Civic, Fit, GM Vectra, Astra, Meriva, Toyota Corolla, Citroën C-4 Pallas, Fiat Linea, Idea, Palio Wekeend, Renault Megane entre outros.
+              A frota da KL Rent a Car é composta por 600 veículos, de médio e grande porte, com 2 ou 4 portas, equipados cd player e ar
+              condicionado. Dentre os modelos e existentes destacamos: Honda CRV, New Civic, Fit, GM Vectra, Astra, Meriva,
+              Toyota Corolla, Citroën C-4 Pallas, Fiat Linea, Idea, Palio Wekeend, Renault Megane entre outros.
             </p>
           </ion-card-content>
         </ion-card>
       </ion-col>
-     
-     <!--<ion-col>
+
+      <!--<ion-col>
         <ion-card>
           <img src="assets/imgs/gol.jpg" />
           <ion-card-content>
@@ -88,8 +93,8 @@
           </ion-card-content>
         </ion-card>
       </ion-col>-->
-      
-     
+
+
     </ion-row>
   </ion-grid>
 

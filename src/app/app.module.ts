@@ -41,6 +41,9 @@ import { NovaLocacaoPageModule } from '../pages/nova-locacao/nova-locacao.module
 import { Locacao24598PageModule } from '../pages/locacao24598/locacao24598.module';
 import { DataServicoPageModule } from '../pages/data-servico/data-servico.module';
 import { HoraServicoPageModule } from '../pages/hora-servico/hora-servico.module';
+import { Contrato25331PageModule } from '../pages/contrato25331/contrato25331.module';
+import { ContatoPageModule } from '../pages/contato/contato.module';
+
 
 @NgModule({
   declarations: [
@@ -78,6 +81,8 @@ import { HoraServicoPageModule } from '../pages/hora-servico/hora-servico.module
     Locacao24598PageModule,
     DataServicoPageModule,
     HoraServicoPageModule,
+    Contrato25331PageModule,
+    ContatoPageModule
 
   ],
   bootstrap: [IonicApp],
@@ -99,6 +104,7 @@ import { HoraServicoPageModule } from '../pages/hora-servico/hora-servico.module
     FileTransfer,
     FileTransferObject,
     Calendar,
+   
   ]
 })
 export class AppModule { }

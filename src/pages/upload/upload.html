@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    
+
     <ion-title>
       Fotos Serviços
     </ion-title>
@@ -12,24 +12,45 @@
 
 <ion-content padding>
 
-  <ion-item>
-   
+  <!-- <img [src]="imageFileName" *ngIf="imageFileName" alt="" />-->
 
-  </ion-item>
 
-  <img [src]="imageFileName" *ngIf="imageFileName" alt="" />
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>Esquerda</ion-item>
+        <img class="square" [src]="img1  || 'assets/imgs/frame.png'" (click)="lateral1()">
+      </ion-col>
+      <ion-col>
+        <ion-item>Direita</ion-item>
+        <img class="square" [src]="img2  || 'assets/imgs/frame.png'" (click)="lateral2()">
+      </ion-col>
+    </ion-row>
+ 
 
-  <ion-footer>
-    <ion-toolbar color="primary">
-      <ion-buttons>
-        <button ion-button icon-left color="dark" (click)="getImage()">
-          <ion-icon name="camera"></ion-icon>Tirar foto
-        </button>
-        <button ion-button icon-left color="dark" (click)="doLogin()">
-          <ion-icon name="md-send"></ion-icon>Enviar
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-footer>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>Frente</ion-item>
+        <img class="square" [src]="img3  || 'assets/imgs/frame.png'" (click)="lateral3()">
+      </ion-col>
+      <ion-col>
+        <ion-item>Traseira  </ion-item>
+        <img class="square" [src]="img4  || 'assets/imgs/frame.png'" (click)="lateral4()">
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>Odômetro (Km)</ion-item>
+        <img class="square" [src]="img5  || 'assets/imgs/frame.png'" (click)="lateral5()">
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+
 
 </ion-content>

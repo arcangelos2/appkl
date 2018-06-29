@@ -31,7 +31,7 @@ export class MyApp {
       { title: 'Locação', index: 1 },
       { title: 'Serviços', index: 2 },
       { title: 'Perfil', index: 3},
-      { title: 'sair', index: 5},
+      { title: 'Contato', index: 4},
       
     ];
 

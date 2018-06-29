@@ -9,6 +9,7 @@ import { ServicosPage } from '../servicos/servicos';
 import { BalanceamentoPage } from '../balanceamento/balanceamento';
 
 import { LoginPage } from '../login/login';
+import { ContatoPage } from '../contato/contato';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -21,8 +22,7 @@ export class TabsPage {
   tab2Root = PerfilPage;
   tab3Root = LocacaoPage;
   tab4Root = ServicosPage;
- 
-  tab6Root = LoginPage;
+  tab5Root = ContatoPage;
   tab7Root = BalanceamentoPage;
  
  

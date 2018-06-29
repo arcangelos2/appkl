@@ -30,7 +30,12 @@ page-nova-correia {
     }
     .ion-title  {
         color: #FFF !important;
-    }
+	}
+	
+	.list span {
+		padding: 0 5px;
+		 border-right: 0px solid rgb(242, 244, 247);
+	}
 }
 
 

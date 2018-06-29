@@ -4,32 +4,15 @@ page-login {
   container-logo {
     display: inline-block;
     width: 100%;
-    margin: 20px 0;
-    img {
-      max-width: 180px;
-      height: 150%;
+    height: 100%;
+    margin: 3px 0;
+    .img {
+      max-width: 150px;
+      height: 60%;
+      
     }
   }
   
-  .main-content {
-    @include flexbox();
-    @include flex-wrap(wrap);
-    min-height: 70%;
-  }
-  .container-bottom {
-    //@include inline-flex;    
-    @include flex-wrap(wrap);
-    @include align-self(flex-end);
-  }
-  .item-inner{
-    border-bottom: 0px !important;
-  }
-  .list-md, .list-ios {
-    margin:0 !important;
-  }
-  .list {
-    padding:0 !important;
-  }
   form {
     .button-md,
     .button-ios {
@@ -38,10 +21,7 @@ page-login {
       padding: 5px !important;
     }
   }
-  .form-bottom-text {
-    display: inline-block;
-    width: 100%;
-  }
+  
   .form-bottom-text label,
   a {
     color: $white;
