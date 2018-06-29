@@ -26,5 +26,8 @@ export class HomePage {
   notifications(){
     this.navCtrl.push(NotificaoPage);
   }
+  sair(){
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+   }
 
 }

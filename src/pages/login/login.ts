@@ -38,7 +38,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    //console.log('ionViewDidLoad LoginPage');
   }
 
 
@@ -69,7 +69,7 @@ export class LoginPage {
 
   // Move to register page
   moveToCadastrar() {
-    this.navCtrl.setRoot(CadastroPage);
+    this.navCtrl.push(CadastroPage);
   }
 
   //Move to Home Page

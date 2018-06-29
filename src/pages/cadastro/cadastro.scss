@@ -18,10 +18,11 @@ page-cadastro {
       }
       .container-logo {
         display: inline-block;
-        width: 100%;
-        margin: 20px 0;
+        width: 30%;
+        margin:-15px 0;
         img {
           max-width: 250px;
+          min-height: 20px;
         }
       }
       .main-content {
@@ -47,7 +48,7 @@ page-cadastro {
         .button-md,
         .button-ios {
           margin: 0px !important;
-          background-color: $black;
+          background-color: $azul;
           padding: 26px !important;
         }
       }
@@ -55,43 +56,14 @@ page-cadastro {
       a {
         color: $white;
       }
-      // a[disabled],
-      // button[disabled],
-      // [ion-button][disabled] {
-      //   opacity: 0.8 !important;
-      // }
+      
       .errormsg p {
         background-color: rgba(255,0,0,.3);
         color: $white;
         border: 1px solid #FF0000;
         padding: 5px;
       }
-      .sepretor-or {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-      }
-      .sepretor-or p {
-        color: $white  ;
-        font-size: 16px;
-        text-transform: lowercase;
-      }
-      .sepretor-or p::before,
-      .sepretor-or p::after {
-        float: left;
-        width: -webkit-calc(48% - 10px);
-        width: -moz-calc(48% - 10px);
-        width: calc(48% - 10px);
-        display: inline-block;
-        height: 1px;
-        margin-top: 8px;
-        background-image: url('../assets/imgs/seprator.png');
-        background-repeat: repeat;
-        content: '';
-      }
-      .sepretor-or p::after {
-        float: right;
-      }
+      
       .eye-icon-btn{
         background-color: transparent !important;
         color: $black;

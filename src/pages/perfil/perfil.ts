@@ -147,8 +147,8 @@ tirarFoto() {
     mediaType: this.camera.MediaType.PICTURE,
 
     allowEdit: true,
-    targetWidth: 100,
-    targetHeight: 100
+    targetWidth: 300,
+    targetHeight: 300
   }
 
   this.camera.getPicture(options).then((imageData) => {

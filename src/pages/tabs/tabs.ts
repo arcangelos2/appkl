@@ -7,7 +7,7 @@ import { NavController, NavParams, Tabs } from 'ionic-angular';
 import { LocacaoPage } from '../locacao/locacao';
 import { ServicosPage } from '../servicos/servicos';
 import { BalanceamentoPage } from '../balanceamento/balanceamento';
-import { UploadPage } from '../upload/upload';
+
 import { LoginPage } from '../login/login';
 
 @Component({

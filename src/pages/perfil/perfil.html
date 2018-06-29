@@ -58,33 +58,27 @@
 
         <ion-list>
 
-          <ion-avatar item-start>
-            <img class="circle" [src]="img  || 'assets/imgs/perfil.jpg'" (click)="tirarFoto()">
+          <ion-avatar >
+            <img class="circle" [src]="img  || 'assets/imgs/contact.jpg'" (click)="tirarFoto()">
           </ion-avatar>
 
           <ion-item padding-right>
-            <ion-label floating color="primary"> Nome completo </ion-label>
+            <ion-label floating color="dark"> Nome completo </ion-label>
             <ion-input [(ngModel)]="cliente.nome" [formControl]="nome" id="nome" type="text" required></ion-input>
           </ion-item>
 
           <ion-item padding-right>
-            <ion-label floating>
-              Cpf
-            </ion-label>
+            <ion-label floating color="dark"> Cpf</ion-label>
             <ion-input [(ngModel)]="cliente.cpf" [formControl]="cpf" id="cpf" type="text" required ></ion-input>
           </ion-item>
 
           <ion-item padding-right>
-              <ion-label floating>
-                Rg
-            </ion-label>
+              <ion-label floating color="dark"> Rg </ion-label>
             <ion-input [(ngModel)]="cliente.rg" [formControl]="rg" id="rg" type="text" required ></ion-input>
           </ion-item>
 
           <ion-item>
-              <ion-label floating>
-               Email
-            </ion-label>
+              <ion-label floating color="dark">  Email </ion-label>
             <ion-input [(ngModel)]="cliente.email" [formControl]="email" id="email" type="email" ></ion-input>
           </ion-item>
 
@@ -110,28 +104,28 @@
 
           
           <ion-item padding-right>
-              <ion-label floating>
+              <ion-label floating color="dark">
                Habilitação
             </ion-label>
             <ion-input [(ngModel)]="cliente.habilitacao" [formControl]="habilitacao" id="habilitacao" type="text" required></ion-input>
           </ion-item>
 
           <ion-item padding-right>
-              <ion-label floating>
+              <ion-label floating color="dark">
               Validade da habilitação
             </ion-label>
             <ion-input [(ngModel)]="cliente.validade_hab" [formControl]="validade_hab" id="validade_hab" type="date" required ></ion-input>
           </ion-item>
 
           <ion-item padding-right>
-              <ion-label floating>
+              <ion-label floating color="dark">
                Data de nascimento
             </ion-label>
             <ion-input [(ngModel)]="cliente.data_nascimento" [formControl]="data_nascimento" id="data_nascimento" type="date" require></ion-input>
           </ion-item>
 
         </ion-list>
-        <button ion-button full color="dark" [disabled]="!authForm.valid" (click)="editar()">Atualizar</button>
+        <button ion-button full color="primary" [disabled]="!authForm.valid" (click)="editar()">Atualizar</button>
       </form>
 
 

@@ -29,7 +29,7 @@ page-perfil {
 		color: #FFF !important;
 	}
 
-    img {
+    .img {
         width: 150px;
          height: 80px;
         align-self: center;
@@ -43,6 +43,9 @@ page-perfil {
         border-radius: 100%;
         margin: 10px auto 0 auto;
   }
+  .img[zoom] {
+    -webkit-transition: all 0.5s ease;
+}
   
   .toolbar-title-md {
     padding: 0 12px;
