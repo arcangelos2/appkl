@@ -19,6 +19,7 @@ export class CadastroPage {
 
   cliente = new Cliente();
   authForm: FormGroup;
+  
   nome: AbstractControl;
   cpf: AbstractControl;
   rg: AbstractControl;
@@ -35,9 +36,11 @@ export class CadastroPage {
 
 
   constructor(public platform: Platform, public toastCtrl: ToastController,
+  
     public fb: FormBuilder, public navCtrl: NavController, public navParams: NavParams,
     public providerCliente: ClienteProvider) {
     this.authForm = this.fb.group({
+      
       'nome': [null, Validators.compose([Validators.required])],
       'cpf': [null, Validators.compose([Validators.required])],
       'rg': [null, Validators.compose([Validators.required])],

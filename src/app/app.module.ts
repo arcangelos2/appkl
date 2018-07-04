@@ -43,6 +43,12 @@ import { DataServicoPageModule } from '../pages/data-servico/data-servico.module
 import { HoraServicoPageModule } from '../pages/hora-servico/hora-servico.module';
 import { Contrato25331PageModule } from '../pages/contrato25331/contrato25331.module';
 import { ContatoPageModule } from '../pages/contato/contato.module';
+import { LojasPageModule } from '../pages/lojas/lojas.module';
+import { LojaPraca14PageModule } from '../pages/loja-praca14/loja-praca14.module';
+import { Geolocation } from '@ionic-native/geolocation';
+import { LojaMatrizPageModule } from '../pages/loja-matriz/loja-matriz.module';
+
+
 
 
 @NgModule({
@@ -82,7 +88,11 @@ import { ContatoPageModule } from '../pages/contato/contato.module';
     DataServicoPageModule,
     HoraServicoPageModule,
     Contrato25331PageModule,
-    ContatoPageModule
+    ContatoPageModule,
+    LojasPageModule,
+    LojaPraca14PageModule,
+    LojaMatrizPageModule,
+   
 
   ],
   bootstrap: [IonicApp],
@@ -104,6 +114,7 @@ import { ContatoPageModule } from '../pages/contato/contato.module';
     FileTransfer,
     FileTransferObject,
     Calendar,
+    Geolocation,
    
   ]
 })

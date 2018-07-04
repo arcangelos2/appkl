@@ -32,6 +32,7 @@ export class MyApp {
       { title: 'Serviços', index: 2 },
       { title: 'Perfil', index: 3},
       { title: 'Contato', index: 4},
+      { title: 'Nossas Lojas', index: 5},
       
     ];
 

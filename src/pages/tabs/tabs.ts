@@ -6,10 +6,8 @@ import { PerfilPage } from '../perfil/perfil';
 import { NavController, NavParams, Tabs } from 'ionic-angular';
 import { LocacaoPage } from '../locacao/locacao';
 import { ServicosPage } from '../servicos/servicos';
-import { BalanceamentoPage } from '../balanceamento/balanceamento';
-
-import { LoginPage } from '../login/login';
 import { ContatoPage } from '../contato/contato';
+import { LojasPage } from '../lojas/lojas';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -23,7 +21,7 @@ export class TabsPage {
   tab3Root = LocacaoPage;
   tab4Root = ServicosPage;
   tab5Root = ContatoPage;
-  tab7Root = BalanceamentoPage;
+  tab6Root = LojasPage;
  
  
   param : any;

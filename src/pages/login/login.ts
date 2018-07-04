@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, Tabs } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
-import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
 import { CadastroPage } from '../cadastro/cadastro';
 import { Cliente } from '../../model/model-cliente';
@@ -19,6 +18,8 @@ export class LoginPage {
 
   cliente = new Cliente();
 
+  
+
   loginData = { email: '', senha: '' };
   
   authForm: FormGroup;
@@ -28,6 +29,8 @@ export class LoginPage {
   passeye: string = 'eye';
   constructor(public toastCtrl: ToastController, public fb: FormBuilder, public navCtrl: NavController,
     public navParams: NavParams, public providerCliente: ClienteProvider) {
+    
+
     this.authForm = this.fb.group({
       'email': [null, Validators.compose([Validators.required])],
       'password': [null, Validators.compose([Validators.required])],
@@ -38,7 +41,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad LoginPage');
+  
   }
 
 
